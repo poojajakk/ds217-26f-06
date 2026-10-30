@@ -1,0 +1,10 @@
+table,issue,decision,reason
+patients,exact duplicate rows,this is where I dropped the duplicate rows and only kept the first row,Keeping the duplicated rows would have altered the data and the results as their would be multiple counts of the same patient
+patients,gender spellings that are not a code,"here I fixed the gender spellings to be consistent to F, M, X",this was done because we need to have consistent values for the same variable
+patients,site codes needing normalization,here I fixed the site codes by removing the spaces and -,similar to the gender there needs to be consistency for it to be easy to understand the results.
+patients,birth_year sentinel 9999,I fixed the values that had 9999 as a place holder for the missing birth year to be NA,this was done because the year 9999 isn't there and it needed to be counted among the missing to be able to analyze accurately.
+visits,weight column named wt_kg in visits_south.csv,the column for weight was renamed to weight_kg,this was done to include the units of the weight to be clear it is in kg and not in pounds.
+visits,sbp sentinel 999 and readings outside 70 through 250,The values were fixed to be missing if they were outside the given range of 70-250,This was done to have the accurate values for sbp and not include extreme outliers
+visits,impossible and loosely written visit dates,this was to have a consistent date throughout all the values and not include those that didn't follow this,This was done to again have consistency throughout the date values
+visits,repeated patient_id and visit pairs,this was to keep the most recentreadings from the patients,I did this to only have one reading for each patient and visit pair to not duplicate or count the same reading twice
+sites,repeated site_code rows,Here I only kept the first row,This was so there wouldn't be multiple rows of the same site code.
